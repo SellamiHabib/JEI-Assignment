@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Home from "./Component/Home/Home";
+import Users from "./Component/Users/Users"
+import {useEffect, useState} from "react";
 
+
+const App = (userData) => {
+
+   const [Array, setArray] = useState([]);
+    const convertData = () => {
+            setArray(userData.userData);
+    }
+
+    useEffect(() =>{
+        convertData();
+        },[userData]
+     )
+
+    return (
+        <div className="App">
+            <Users fetchedData = {Array}/>
+            <Home/>
+        </div>
+    );
+}
 export default App;
