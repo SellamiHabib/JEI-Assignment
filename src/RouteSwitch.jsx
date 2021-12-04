@@ -7,18 +7,20 @@ import User from "./Component/Users/User";
 
 
 
-const createRouteUser = ()  => {
+const createRouteUser = (Data)  => {
     const row = [];
-    for(let i = 1 ; i <= 10 ; ++i) {
-        row.push(<Route path ={`/users/${i}`} element={<User />}/>);
-    }
-    return row
 
+    for(let i = 1 ; i <= 10 ; ++i) {
+
+        row.push(<Route path ={`/users/${i}`} element={<User props = {{Data, i}} />}/>);
+    }
+    return row;
 }
 const RouteSwitch = () => {
-    const url = 'https://jsonplaceholder.typicode.com/users';
 
+    const url = 'https://jsonplaceholder.typicode.com/users';
     const [usersList, getUsers] = useState([]);
+
     const fetchAllUsers = () => {
         axios.get(url)
             .then ( (response) => {
@@ -38,7 +40,7 @@ const RouteSwitch = () => {
                 <Route path ="/" element={<App userData = {usersList}/>}/>
                 <Route path ="/Users" element={<Users fetchedData={usersList}/>}/>
                 {
-                    createRouteUser()
+                    createRouteUser(usersList)
                 }
 
             </Routes>
