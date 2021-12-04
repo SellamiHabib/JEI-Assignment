@@ -23,7 +23,7 @@ li {
 a {
     font-size: 120%;
     text-decoration: underline ;
-    color: #4084cb;
+    color: rgb(81, 160, 220);
 }
 a:visited {
     color: #a098f5;
