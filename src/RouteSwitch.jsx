@@ -37,6 +37,7 @@ const RouteSwitch = () => {
         <BrowserRouter>
             <Routes>
                 <Route path ="/" element={<App userData = {usersList}/>}/>
+                <Route path ="/JEI-Assignment" element={<App userData = {usersList}/>}/>
                 <Route path ="/Users" element={<Users fetchedData={usersList}/>}/>
                 {
                     createRouteUser(usersList)
