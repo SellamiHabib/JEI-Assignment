@@ -1,10 +1,8 @@
 .Users {
     color : white;
-    margin: 30px;
     display: flex;
     text-decoration: none;
     flex-direction: column;
-
 }
 h2 {
     align-self: center;
@@ -14,7 +12,6 @@ ol {
     flex-direction: column;
     align-items: flex-start;
     list-style-type: none;
-
     margin: 0;
 
 }
@@ -24,10 +21,10 @@ li {
     white-space: nowrap;
 }
 a {
-
+    font-size: 120%;
     text-decoration: underline ;
-    color: #3788da;
+    color: #4084cb;
 }
 a:visited {
-    color: #8378f5;
+    color: #a098f5;
 }

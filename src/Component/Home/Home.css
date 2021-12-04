@@ -1,10 +1,14 @@
+.welcomeText {
+    display: flex;
+    flex-direction: column;
+}
 
 .title {
     color: rgb(110, 187, 108);
     font-weight: 700;
     font-size: 100px;
 }
-.main {
+.textContent {
     margin: 0 5%;
     color: white;
 

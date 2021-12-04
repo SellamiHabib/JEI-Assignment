@@ -10,8 +10,7 @@ import User from "./Component/Users/User";
 const createRouteUser = (Data)  => {
     const row = [];
 
-    for(let i = 1 ; i <= 10 ; ++i) {
-
+    for(let i = 1 ; i <= 10 ; i++) {
         row.push(<Route path ={`/users/${i}`} element={<User props = {{Data, i}} />}/>);
     }
     return row;

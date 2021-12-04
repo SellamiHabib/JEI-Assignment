@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "./User.css";
+import Header from "../Header/Header";
+import Users from "./Users";
 
 
 const User = (props) => {
 
     const userLists = props.props.Data;
-    const id = props.props.i
+    const id = props.props.i - 1;
     const user = userLists[id];
 
     const url = "https://jsonplaceholder.typicode.com/posts"
@@ -14,13 +16,13 @@ const User = (props) => {
     const [Posts, setPosts] = useState([]);
 
     const fetchUserData = () => {
-    console.log(user);
+
         axios.get(url)
             .then(
                 (response) => {
                     const allPosts = response.data;
                     for (let i = 0; i < 5; ++i) {
-                        let current = ((id - 1) * 10) + (i + 4);
+                        let current = ((id ) * 10) + (i + 5);
                         lastPosts[i] = (allPosts[current]);
                     }
                     setPosts(lastPosts);
@@ -33,14 +35,16 @@ const User = (props) => {
         fetchUserData();
 
     }, [userLists]);
-
     const createPosts = () => {
         const rows = [];
 
         for(let i = 0 ; i<5 ;++i)
         {
-            if(!Posts[i])
+            if(!Posts[i]) {
+                { console.log("Loading");}
                 return <div> Loading ...</div>
+
+            }
             rows.push(
                 <div className="Post">
                     <h2> {Posts[i].title}</h2>
@@ -56,10 +60,12 @@ const User = (props) => {
         )
     }
     if(!user)
-        return <div>Loading ...</div>
+        return <div className="Loading">Loading ...</div>
     return (
         <div className="User">
-            <h1>Welcome to {user.name}'s post history</h1>
+            <Header/>
+
+            <h1>{user.name}'s post history</h1>
             {
                 createPosts()
             }

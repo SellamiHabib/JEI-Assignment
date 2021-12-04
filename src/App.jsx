@@ -3,7 +3,7 @@ import './App.css';
 import Home from "./Component/Home/Home";
 import Users from "./Component/Users/Users"
 import {useEffect, useState} from "react";
-
+import Header from "./Component/Header/Header";
 
 const App = (userData) => {
 
@@ -19,8 +19,11 @@ const App = (userData) => {
 
     return (
         <div className="App">
-            <Users fetchedData = {Array}/>
-            <Home/>
+            <Header/>
+            <div className="main">
+                <Users fetchedData = {Array}/>
+                <Home/>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,25 @@
 .App{
-    text-align: center;
+    flex-direction: column;
     display: flex;
     gap : 5%;
     align-items : flex-start;
+
+}
+Header {
+    align-self: center;
+    margin: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.main {
+    display: flex;
+    justify-content: center;
+}
+Home {
+    display: flex;
+    flex-direction: column;
+}
+Header a:hover, Header a:visited, Header a:link, Header a:active{
+    text-decoration: none;
+    color: #f39323;
 }
